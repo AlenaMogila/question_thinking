@@ -430,18 +430,12 @@
                 
                 <div class="card">
                     <h3>Карточки технологий</h3>
-                    <p>Скачайте готовые карточки для печати:</p>
-                    <button class="btn" onclick="downloadFile('technology-cards.pdf', 'Карточки технологий')">
-                        <i class="fas fa-download"></i> Скачать PDF
-                    </button>
+                    <p>Готовые карточки для печати доступны организаторам игры.</p>
                 </div>
                 
                 <div class="card">
                     <h3>Бланки для ответов</h3>
-                    <p>Распечатайте бланки для записи вопросов и идей:</p>
-                    <button class="btn" onclick="downloadFile('answer-sheets.docx', 'Бланки для ответов')">
-                        <i class="fas fa-download"></i> Скачать DOCX
-                    </button>
+                    <p>Бланки для записи вопросов и идей предоставляются организаторами.</p>
                 </div>
             </div>
         </div>
@@ -463,23 +457,6 @@
                 });
             });
         });
-
-        function downloadFile(filename, message) {
-            // Создаем временные файлы для демонстрации
-            const blob = new Blob([`${message} - Вечер Фарадея\n\nЭто демонстрационная версия файла. Для получения полных материалов свяжитесь с организаторами.`], 
-                { type: filename.endsWith('.pdf') ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-            
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            alert(`${message} скачаны в демонстрационном режиме!`);
-        }
     </script>
 </body>
 </html>
