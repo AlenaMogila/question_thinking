@@ -419,7 +419,7 @@
                         </ul>
                     </div>
                     
-                    <button class="btn" onclick="alert('Поздравляем с завершением игры! За то, чтобы мы никогда не переставали задавать вопросы! 🥂')">
+                    <button class="btn" onclick="alert('Поздравляем с завершением игры!')">
                         <i class="fas fa-trophy"></i> Завершить игру
                     </button>
                 </div>
@@ -431,7 +431,7 @@
                 <div class="card">
                     <h3>Карточки технологий</h3>
                     <p>Скачайте готовые карточки для печати:</p>
-                    <button class="btn" onclick="alert('Карточки скачаны!')">
+                    <button class="btn" onclick="downloadFile('technology-cards.pdf', 'Карточки технологий')">
                         <i class="fas fa-download"></i> Скачать PDF
                     </button>
                 </div>
@@ -439,7 +439,7 @@
                 <div class="card">
                     <h3>Бланки для ответов</h3>
                     <p>Распечатайте бланки для записи вопросов и идей:</p>
-                    <button class="btn" onclick="alert('Бланки скачаны!')">
+                    <button class="btn" onclick="downloadFile('answer-sheets.docx', 'Бланки для ответов')">
                         <i class="fas fa-download"></i> Скачать DOCX
                     </button>
                 </div>
@@ -463,6 +463,23 @@
                 });
             });
         });
+
+        function downloadFile(filename, message) {
+            // Создаем временные файлы для демонстрации
+            const blob = new Blob([`${message} - Вечер Фарадея\n\nЭто демонстрационная версия файла. Для получения полных материалов свяжитесь с организаторами.`], 
+                { type: filename.endsWith('.pdf') ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert(`${message} скачаны в демонстрационном режиме!`);
+        }
     </script>
 </body>
 </html>
