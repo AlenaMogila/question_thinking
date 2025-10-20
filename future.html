@@ -11,12 +11,14 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
             color: #333;
         }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -25,23 +27,28 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
+
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
             padding: 30px;
             text-align: center;
         }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
+
         .subtitle {
             font-size: 1.2em;
             opacity: 0.9;
         }
+
         .game-content {
             padding: 30px;
         }
+
         .timer {
             background: #f8f9fa;
             padding: 15px;
@@ -52,6 +59,7 @@
             font-weight: bold;
             color: #e74c3c;
         }
+
         .scenario {
             background: #f8f9fa;
             padding: 25px;
@@ -59,19 +67,23 @@
             margin-bottom: 25px;
             line-height: 1.6;
         }
+
         .scenario h2 {
             color: #2c3e50;
             margin-bottom: 15px;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
+
         .phase {
             display: none;
             animation: fadeIn 0.5s ease;
         }
+
         .phase.active {
             display: block;
         }
+
         .question {
             background: white;
             border: 2px solid #e74c3c;
@@ -80,15 +92,18 @@
             margin: 15px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .question h3 {
             color: #e74c3c;
             margin-bottom: 15px;
         }
+
         .options {
             display: grid;
             gap: 10px;
             margin-top: 15px;
         }
+
         .option {
             background: #f8f9fa;
             padding: 15px;
@@ -97,14 +112,17 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
+
         .option:hover {
             background: #e9ecef;
             border-color: #3498db;
         }
+
         .option.selected {
             background: #d4edda;
             border-color: #28a745;
         }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -112,6 +130,7 @@
             padding-top: 20px;
             border-top: 1px solid #dee2e6;
         }
+
         button {
             padding: 12px 25px;
             border: none;
@@ -121,30 +140,37 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
+
         .btn-prev {
             background: #6c757d;
             color: white;
         }
+
         .btn-next {
             background: #3498db;
             color: white;
         }
+
         .btn-next:hover {
             background: #2980b9;
         }
+
         .btn-prev:hover {
             background: #5a6268;
         }
+
         .conclusion {
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             padding: 25px;
             border-radius: 10px;
             margin-top: 20px;
         }
+
         .conclusion h2 {
             color: #155724;
             margin-bottom: 15px;
         }
+
         .principle {
             background: white;
             padding: 15px;
@@ -152,6 +178,7 @@
             margin: 10px 0;
             border-left: 4px solid #28a745;
         }
+
         .progress-bar {
             height: 8px;
             background: #e9ecef;
@@ -159,33 +186,41 @@
             margin: 20px 0;
             overflow: hidden;
         }
+
         .progress {
             height: 100%;
             background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
             width: 0%;
             transition: width 0.5s ease;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
             }
+            
             header {
                 padding: 20px;
             }
+            
             h1 {
                 font-size: 2em;
             }
+            
             .game-content {
                 padding: 20px;
             }
+            
             .navigation {
                 flex-direction: column;
                 gap: 10px;
             }
+            
             button {
                 width: 100%;
             }
@@ -198,9 +233,10 @@
             <h1>Цифровой след: урок на будущее</h1>
             <div class="subtitle">Интерактивная мини-игра по цифровой этике в образовании</div>
         </header>
-        
+
         <div class="game-content">
             <div class="timer" id="timer">Время: 00:00</div>
+            
             <div class="progress-bar">
                 <div class="progress" id="progress"></div>
             </div>
@@ -213,7 +249,7 @@
                     <p>Время на игру: 15-20 минут. Используйте метод критического мышления для анализа ситуации.</p>
                 </div>
                 <div class="navigation">
-                    <div></div>
+                    <div></div> <!-- Пустой div для выравнивания -->
                     <button class="btn-next" onclick="showPhase('phase-scenario')">Начать игру</button>
                 </div>
             </div>
@@ -247,6 +283,7 @@
                         <div class="option" onclick="selectOption(this)">Продемонстрировал возможности новой системы</div>
                     </div>
                 </div>
+
                 <div class="question">
                     <h3>Вопрос 2: Чьи интересы были затронуты в этой ситуации?</h3>
                     <div class="options">
@@ -255,6 +292,7 @@
                         <div class="option" onclick="selectOption(this)">Всех студентов университета и его репутации</div>
                     </div>
                 </div>
+
                 <div class="question">
                     <h3>Вопрос 3: Какое право было нарушено в первую очередь?</h3>
                     <div class="options">
@@ -263,9 +301,10 @@
                         <div class="option" onclick="selectOption(this)">Авторское право</div>
                     </div>
                 </div>
+
                 <div class="navigation">
                     <button class="btn-prev" onclick="showPhase('phase-scenario')">Назад</button>
-                    <button class="btn-next" onclick="validateAndContinue()">К выводам</button>
+                    <button class="btn-next" onclick="showPhase('phase-conclusion')">К выводам</button>
                 </div>
             </div>
 
@@ -275,16 +314,20 @@
                     <h2>Анализ ситуации</h2>
                     <p>В ходе нашего обсуждения мы выявили две ключевые проблемы:</p>
                 </div>
+
                 <div class="conclusion">
                     <h2>Нарушенные принципы</h2>
+                    
                     <div class="principle">
                         <h3>Принцип 1: Конфиденциальность и неприкосновенность частной жизни</h3>
                         <p>Был осуществлен сбор и распространение глубоких личных метаданных без явного и информированного согласия студента. Это грубое нарушение права на приватность.</p>
                     </div>
+
                     <div class="principle">
                         <h3>Принцип 2: Ответственность и подотчётность</h3>
                         <p>Университет внедрил мощный инструмент анализа данных, но не обеспечил четких регламентов его использования, обучения сотрудников и механизмов контроля. Организация не исполнила свою подотчётность перед студентами.</p>
                     </div>
+
                     <div class="principle">
                         <h3>Рекомендуемые действия:</h3>
                         <ul>
@@ -295,6 +338,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="navigation">
                     <button class="btn-prev" onclick="showPhase('phase-questions')">Назад</button>
                     <button class="btn-next" onclick="restartGame()">Начать заново</button>
@@ -309,6 +353,7 @@
         let currentPhase = 'phase-intro';
         const totalPhases = 4;
 
+        // Запуск таймера при загрузке страницы
         window.onload = function() {
             startTimer();
             updateProgressBar();
@@ -328,11 +373,9 @@
         }
 
         function updateProgressBar() {
-            const phaseIndex = 
-                currentPhase === 'phase-intro' ? 0 :
-                currentPhase === 'phase-scenario' ? 1 :
-                currentPhase === 'phase-questions' ? 2 : 3;
-            
+            const phaseIndex = parseInt(currentPhase.split('-')[1] === 'intro' ? 0 : 
+                                currentPhase.split('-')[1] === 'scenario' ? 1 :
+                                currentPhase.split('-')[1] === 'questions' ? 2 : 3);
             const progress = (phaseIndex / (totalPhases - 1)) * 100;
             document.getElementById('progress').style.width = `${progress}%`;
         }
@@ -341,40 +384,32 @@
             document.querySelectorAll('.phase').forEach(phase => {
                 phase.classList.remove('active');
             });
+            
             document.getElementById(phaseId).classList.add('active');
             currentPhase = phaseId;
             updateProgressBar();
         }
 
         function selectOption(option) {
+            // Снимаем выделение с других вариантов в этом вопросе
             const options = option.parentElement.querySelectorAll('.option');
             options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Выделяем выбранный вариант
             option.classList.add('selected');
         }
 
-        function validateAndContinue() {
-            const questions = document.querySelectorAll('#phase-questions .question');
-            let allAnswered = true;
-            
-            questions.forEach(question => {
-                const selected = question.querySelector('.option.selected');
-                if (!selected) allAnswered = false;
-            });
-            
-            if (!allAnswered) {
-                alert('Пожалуйста, ответьте на все вопросы перед продолжением');
-                return;
-            }
-            
-            showPhase('phase-conclusion');
-        }
-
         function restartGame() {
+            // Сброс выбранных ответов
             document.querySelectorAll('.option').forEach(option => {
                 option.classList.remove('selected');
             });
+            
+            // Перезапуск таймера
             clearInterval(timerInterval);
             startTimer();
+            
+            // Возврат к началу
             showPhase('phase-intro');
         }
     </script>
